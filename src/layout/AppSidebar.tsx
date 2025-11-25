@@ -39,11 +39,21 @@ const navItems: NavItem[] = [
     name: "Home",
     path:'/home'
   },
- {
+      {
     icon: <TableIcon />,
     name: "Leadership",
-    path:'/leadership'
+    subItems: [
+      {
+        name: "Leadership",
+        path: "/leadership",
+      },
+       {
+        name: "vision",
+        path: "/vision",
+      },
+    ],
   },
+
     {
     icon: <TableIcon />,
     name: "Contact",
@@ -323,7 +333,7 @@ const AppSidebar: React.FC = () => {
             </>
           ) : (
             <img
-              src="/images/logo/logo-icon.svg"
+              src="/images/logo/favicon.png"
               alt="Logo"
               width={32}
               height={32}

@@ -8,6 +8,10 @@ export default function ManufacturingPage() {
     // strategy 1
     strategyTitle1: "",
     strategyDescription1: "",
+    strategyTitle2: "",
+    strategyDescription2: "",
+    strategyTitle3: "",
+    strategyDescription3: "",
     // strategic section
     strategicDescription: "",
     strategicTitle1: "",
@@ -30,6 +34,8 @@ export default function ManufacturingPage() {
     banner: null,
     image: null,
     strategyImage1: null,
+    strategyImage2: null,
+    strategyImage3: null,
     strategicImage: null,
     businessImage1: null,
     businessImage2: null,
@@ -40,6 +46,8 @@ export default function ManufacturingPage() {
     banner: null,
     image: null,
     strategyImage1: null,
+    strategyImage2: null,
+    strategyImage3: null,
     strategicImage: null,
     businessImage1: null,
     businessImage2: null,
@@ -88,6 +96,10 @@ export default function ManufacturingPage() {
           description: d.description || "",
           strategyTitle1: d.strategyTitle1 || "",
           strategyDescription1: d.strategyDescription1 || "",
+          strategyTitle2: d.strategyTitle2 || "",
+          strategyDescription2: d.strategyDescription2 || "",
+          strategyTitle3: d.strategyTitle3 || "",
+          strategyDescription3: d.strategyDescription3 || "",
           strategicDescription: d.strategicDescription || "",
           strategicTitle1: d.strategicTitle1 || "",
           strategicDescription1: d.strategicDescription1 || "",
@@ -108,6 +120,8 @@ export default function ManufacturingPage() {
           banner: fullUrl(d.banner),
           image: fullUrl(d.image),
           strategyImage1: fullUrl(d.strategyImage1),
+          strategyImage2: fullUrl(d.strategyImage2),
+          strategyImage3: fullUrl(d.strategyImage3),
           strategicImage: fullUrl(d.strategicImage),
           businessImage1: fullUrl(d.businessImage1),
           businessImage2: fullUrl(d.businessImage2),
@@ -169,6 +183,8 @@ export default function ManufacturingPage() {
         banner: null,
         image: null,
         strategyImage1: null,
+        strategyImage2: null,
+        strategyImage3: null,
         strategicImage: null,
         businessImage1: null,
         businessImage2: null,
@@ -188,7 +204,6 @@ export default function ManufacturingPage() {
 
   return (
     <div className="p-8  mx-auto bg-white shadow-lg rounded-xl space-y-8">
-
       <div>
         <label className="font-semibold">Banner (Full width)</label>
         <input
@@ -244,7 +259,7 @@ export default function ManufacturingPage() {
         <h3 className="font-semibold text-lg">Strategy</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
           <div>
-            <label className="font-medium">Image</label>
+            <label className="font-medium">StrategyImage1</label>
             <input
               type="file"
               name="strategyImage1"
@@ -262,7 +277,7 @@ export default function ManufacturingPage() {
           </div>
 
           <div className="md:col-span-2">
-            <label className="font-medium">Title</label>
+            <label className="font-medium">StrategyTitle1</label>
             <input
               type="text"
               name="strategyTitle1"
@@ -271,7 +286,9 @@ export default function ManufacturingPage() {
               className="w-full border p-2 rounded-lg"
             />
 
-            <label className="font-medium mt-3 block">Description</label>
+            <label className="font-medium mt-3 block">
+              StrategyDescription1
+            </label>
             <textarea
               name="strategyDescription1"
               value={form.strategyDescription1}
@@ -279,6 +296,84 @@ export default function ManufacturingPage() {
               className="w-full border p-2 rounded-lg h-28"
             />
           </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+        <div>
+          <label className="font-medium">StrategyImage2</label>
+          <input
+            type="file"
+            name="strategyImage2"
+            accept="image/*"
+            onChange={changeFile}
+            className="block w-full border p-2 rounded-lg"
+          />
+          {preview.strategyImage2 && (
+            <img
+              src={preview.strategyImage2}
+              alt="strategy1"
+              className="w-full h-28 object-cover rounded-lg mt-2"
+            />
+          )}
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="font-medium">StrategyTitle2</label>
+          <input
+            type="text"
+            name="strategyTitle2"
+            value={form.strategyTitle2}
+            onChange={changeText}
+            className="w-full border p-2 rounded-lg"
+          />
+
+          <label className="font-medium mt-3 block">StrategyDescription2</label>
+          <textarea
+            name="strategyDescription2"
+            value={form.strategyDescription2}
+            onChange={changeText}
+            className="w-full border p-2 rounded-lg h-28"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+        <div>
+          <label className="font-medium">StrategyImage3</label>
+          <input
+            type="file"
+            name="strategyImage3"
+            accept="image/*"
+            onChange={changeFile}
+            className="block w-full border p-2 rounded-lg"
+          />
+          {preview.strategyImage3 && (
+            <img
+              src={preview.strategyImage3}
+              alt="strategy3"
+              className="w-full h-28 object-cover rounded-lg mt-2"
+            />
+          )}
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="font-medium">StrategyTitle3</label>
+          <input
+            type="text"
+            name="strategyTitle3"
+            value={form.strategyTitle3}
+            onChange={changeText}
+            className="w-full border p-2 rounded-lg"
+          />
+
+          <label className="font-medium mt-3 block">StrategyDescription3</label>
+          <textarea
+            name="strategyDescription3"
+            value={form.strategyDescription3}
+            onChange={changeText}
+            className="w-full border p-2 rounded-lg h-28"
+          />
         </div>
       </div>
 

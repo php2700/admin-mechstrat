@@ -284,7 +284,29 @@ export default function HomeAdminPage() {
                         <h2 className="font-semibold text-lg mb-2">
                               About Description
                         </h2>
-                        {form.aboutDescription.map((txt, i) => (
+                        <div>
+{/* <div className="flex justify-between"> 
+        <div>
+                              <label className="font-semibold">
+                                    Core Image
+                              </label>
+                              <input
+                                    type="file"
+                                    name="image"
+                                    accept="image/*"
+                                    onChange={changeFile}
+                                    className="block w-full border p-2 rounded"
+                              />
+                              {preview.image && (
+                                    <img
+                                          src={preview.image}
+                                          alt="core"
+                                          className="w-full h-40 object-cover rounded mt-2"
+                                    />
+                              )}
+                        </div>
+                        <div className="flex  w-full">
+                         {form.aboutDescription.map((txt, i) => (
                               <div key={i} className="flex gap-2 mb-2">
                                     <textarea
                                           value={txt}
@@ -312,6 +334,71 @@ export default function HomeAdminPage() {
                         >
                               + Add Paragraph
                         </button>
+                        </div>
+</div> */}
+<div className="flex gap-4">
+      {/* LEFT SIDE → PARAGRAPHS */}
+      <div className="w-1/2">
+         {form.aboutDescription.map((txt, i) => (
+    <div key={i} className="mb-3 relative">
+        
+        {/* Remove (Cross Button) */}
+        <button
+            type="button"
+            onClick={() => removeAbout(i)}
+            className="absolute top-2 right-2 text-red-600 font-bold text-xl leading-none"
+            title="Remove"
+        >
+            ×
+        </button>
+
+        <textarea
+            value={txt}
+            onChange={(e) => setAboutAt(i, e.target.value)}
+            className="w-full border p-3 rounded pr-10"
+            placeholder={`Paragraph ${i + 1}`}
+            rows={4}
+        />
+    </div>
+))}
+
+
+            <button
+                  type="button"
+                  onClick={addAbout}
+                  className="px-4 py-2 bg-blue-600 text-white rounded"
+            >
+                  + Add Paragraph
+            </button>
+      </div>
+
+      {/* RIGHT SIDE → IMAGE UPLOAD */}
+      <div className="w-1/2">
+            <label className="font-semibold">Core Image</label>
+
+            <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={changeFile}
+                  className="block w-full border p-2 rounded"
+            />
+
+            {preview.image && (
+                  <img
+                        src={preview.image}
+                        alt="core"
+                        className="w-full h-60 object-cover rounded mt-3"
+                  />
+            )}
+      </div>
+</div>
+
+
+
+                        </div>
+                       
+                        
                   </div>
 
                   {/* Vision and core */}

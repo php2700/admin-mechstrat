@@ -27,6 +27,7 @@ import ManufacturingTables from "./pages/Tables/manufacturing";
 import CapexTables from "./pages/Tables/capex";
 import MainTab from "./pages/Tables/mainTab";
 import Banner from "./pages/Tables/banner";
+import VisionTable from "./pages/Tables/vision";
 
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="/manufacturing" element={<ManufacturingTables/>} />
             <Route path="/capex" element={<CapexTables/>} />
             <Route path="/leadership" element={<LeadershipTables/>} />
+                <Route path="/vision" element={<VisionTable/>} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
