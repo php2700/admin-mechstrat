@@ -3,6 +3,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
+import ForgotPasswords from "./pages/AuthPages/forward"
+import ResetPasswords from "./pages/AuthPages/Reset"
 import NotFound from "./pages/OtherPage/NotFound";
 import UserProfiles from "./pages/UserProfiles";
 import Videos from "./pages/UiElements/Videos";
@@ -28,6 +30,7 @@ import CapexTables from "./pages/Tables/capex";
 import MainTab from "./pages/Tables/mainTab";
 import Banner from "./pages/Tables/banner";
 import VisionTable from "./pages/Tables/vision";
+
 
 
 export default function App() {
@@ -76,6 +79,10 @@ export default function App() {
 
           {/* Auth Layout */}
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPasswords />} />
+          <Route path="/verify-otp" element={<ResetPasswords />} />
+
+
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
